@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Deploy Next.js server-side React apps to Heroku",
   "scripts": {
-    "dev": "next",
+    "dev": "nodemon -w start.js start.js -p $PORT",
     "build": "next build",
-    "start": "NODE_ENV=production node server -p $PORT",
+    "start": "NODE_ENV=production node start -p $PORT",
     "heroku-postbuild": "npm run build"
   },
   "engines": {
@@ -30,6 +30,7 @@
   "dependencies": {
     "express": "^4.16.3",
     "next": "^4.2.3",
+    "nodemon": "^1.17.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   }
