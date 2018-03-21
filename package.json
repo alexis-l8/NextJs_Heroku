@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Deploy Next.js server-side React apps to Heroku",
   "scripts": {
-    "dev": "nodemon -w start.js start.js -p $PORT",
+    "dev": "NODE_ENV=development nodemon -w start.js start.js -p $PORT",
     "build": "next build",
     "start": "NODE_ENV=production node start -p $PORT",
     "heroku-postbuild": "npm run build"

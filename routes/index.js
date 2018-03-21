@@ -10,7 +10,7 @@ const server = handle => {
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({ extended: true }))
 
-  app.use('./api/mailing-list', mailingList)
+  app.use('/api/mailing-list', mailingList)
 
   app.get('*', (req, res) => {
     return handle(req, res)

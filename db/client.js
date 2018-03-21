@@ -1,6 +1,6 @@
 const config = require('../knexfile.js')
-const env = 'development'
-console.log('environment: ', process.env.NODE_ENV)
+const env = process.env.NODE_ENV
+console.log('environment: ', env)
 
 const knex = require('knex')(config[env])
 
