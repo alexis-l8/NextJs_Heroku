@@ -1,6 +1,6 @@
 const Index = () => (
   <div>
-    <h1>Hello World!! added circlci</h1>
+    <h1>Hello World!! adding cypress</h1>
     <p>Insert your email here please</p>
 
     <form action="/api/mailing-list/submit" method="post">
