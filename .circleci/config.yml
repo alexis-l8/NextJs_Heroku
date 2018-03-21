@@ -11,5 +11,6 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run build
-      - run: npm start
       - run: npm run cypress:run
+          environemnt:
+            URL: $CIRCLE_BUILD_URL
