@@ -1,6 +1,6 @@
 const Index = () => (
   <div>
-    <h1>Hello World!! Knex migrations, query, client, config-dev</h1>
+    <h1>Hello World!! Insert Email DB Query Connected</h1>
     <p>Insert your email here please</p>
 
     <form action="/api/mailing-list/submit" method="post">
