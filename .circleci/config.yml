@@ -10,4 +10,5 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: $(npm bin)/cypress run --record --key <record_key>
+      - run: echo "hello world"
+      - run: echo CIRCLE_BUILD_URL

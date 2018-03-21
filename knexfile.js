@@ -1,9 +1,9 @@
-let config;
+let config
 
-if ( process.env.NODE_ENV === 'production' ) {
-  config = './config.env';
+if (process.env.NODE_ENV === 'production') {
+  config = './config.env'
 } else {
-  config = './config-dev.env';
+  config = './config-dev.env'
 }
 
 require('env2')(config)
@@ -26,7 +26,7 @@ const knexfile = {
     migrations: {
       directory: __dirname + '/db/migrations'
     }
-  },
+  }
 }
 
 module.exports = knexfile
