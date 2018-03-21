@@ -7,10 +7,10 @@ jobs:
           ## this enables colors in the output
           TERM: xterm
     working_directory: ~/app
+    environment:
+      - URL: $CIRCLE_BUILD_URL
     steps:
       - checkout
       - run: npm install
       - run: npm run build
       - run: npm run cypress:run
-          environment:
-            URL: $CIRCLE_BUILD_URL
