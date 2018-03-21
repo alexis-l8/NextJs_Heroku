@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const mailingList = require('./mailingList')
 
 const port = process.env.PORT || 3000
 
@@ -8,6 +9,8 @@ const server = handle => {
 
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({ extended: true }))
+
+  app.use('./api/mailing-list', mailingList)
 
   app.get('*', (req, res) => {
     return handle(req, res)
