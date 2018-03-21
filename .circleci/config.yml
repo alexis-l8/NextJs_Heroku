@@ -9,7 +9,7 @@ jobs:
     working_directory: ~/app
     steps:
       - checkout
-      - run: echo $CIRCLE_BUILD_URL
       - run: npm install
-      - run: echo "hello world"
-      - run: cypress run --env URL=$CIRCLE_BUILD_URL
+      - run: npm run build
+      - run: npm start
+      - run: npm run cypress:run
