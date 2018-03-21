@@ -11,4 +11,4 @@ jobs:
       - checkout
       - run: npm install
       - run: echo "hello world"
-      - run: echo CIRCLE_BUILD_URL
+      - run: cypress run --env URL=CIRCLE_BUILD_URL
