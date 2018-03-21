@@ -2,7 +2,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:9.8.0
+      - image: cypress/base:6
+        environment:
+          ## this enables colors in the output
+          TERM: xterm
+    working_directory: ~/app
     steps:
       - checkout
-      - run: echo "A first hello"
+      - run: npm install
+      - run: $(npm bin)/cypress run --record --key <record_key>
