@@ -9,9 +9,7 @@
     "start": "cross-env NODE_ENV=production node start -p $PORT",
     "heroku-postbuild": "npm run build",
     "cypress:open": "cypress open",
-    "cypress:dev": "cypress run --env URL=https://localhost:3000/",
-    "cypress:production":
-      "cypress run --env URL=https://dry-ridge-88283.herokuapp.com/"
+    "cypress:run": "cypress run"
   },
   "engines": {
     "node": "9.5.x",

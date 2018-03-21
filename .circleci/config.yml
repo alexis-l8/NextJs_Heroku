@@ -9,4 +9,6 @@ jobs:
     working_directory: ~/app
     steps:
       - checkout
+      - run: npm install
       - run: echo "hello world"
+      - run: npm run cypress:run
