@@ -4,7 +4,7 @@ const insertEmail = require('../db/query/insertEmail')
 
 mailingListRoute.post('/submit', (req, res) => {
   const { first_name, last_name, email } = req.body
-  const IP = req.headers["X-Forwarded-For"] ? req.headers["X-Forwarded-For"].split(',').pop() : req.connection.remoteAddress
+  const IP = req.headers["X-Forwarded-For"]
   insertEmail(first_name, last_name, email, IP) .then(() => {
   res.status(201).redirect('/')
   })
