@@ -19,7 +19,11 @@ jobs:
           paths:
             - node_modules
       - run: npm run build
-      - run: npm start
+      - run:
+          command: npm start
+          background: true
+          evironment:
+            URL: $CIRCLE_BUILD_URL
   test:
     docker:
       - image: cypress/base:6
