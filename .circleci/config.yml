@@ -7,11 +7,17 @@ jobs:
           ## this enables colors in the output
           TERM: xterm
     working_directory: ~/app
-    environment:
-      - URL: $CIRCLE_BUILD_URL
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-npm-deps-{{ checksum "package.json" }}
+            - v1-npm-deps
       - run: npm install
+      - save_cache:
+          key: v1-npm-deps-{{ checksum "package.json" }}
+          paths:
+            - node_modules
       - run: npm run build
       - run:
           command: npm run cypress:run
