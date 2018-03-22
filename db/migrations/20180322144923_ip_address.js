@@ -1,13 +1,11 @@
 exports.up = function(knex, Promise) {
   return knex.schema.table('mailing_list', (table) => {
-    table.string('ip1');
-    table.string('ip2');
+    table.string('IP');
   })
 };
 
 exports.down = function(knex, Promise) {
   return knex.schema.table('mailing_list', (table) => {
-    table.dropColumn('ip2');
-    table.dropColumn('ip1')
+    table.dropColumn('IP')
   })
 };
