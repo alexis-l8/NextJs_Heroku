@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "Deploy Next.js server-side React apps to Heroku",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon -w start.js start.js -p $PORT",
+    "dev":
+      "cross-env NODE_ENV=development nodemon -w start.js start.js -p $PORT",
     "build": "next build",
-    "start": "NODE_ENV=production node start -p $PORT",
-    "heroku-postbuild": "npm run build"
+    "start": "cross-env NODE_ENV=production node start -p $PORT",
+    "heroku-postbuild": "npm run build",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "engines": {
     "node": "9.5.x",
@@ -16,11 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/mars/heroku-nextjs.git"
   },
-  "keywords": [
-    "react",
-    "ssr",
-    "server-side-rendering"
-  ],
+  "keywords": ["react", "ssr", "server-side-rendering"],
   "author": "Mars Hall",
   "license": "MIT",
   "bugs": {
@@ -35,6 +34,10 @@
     "nodemon": "^1.17.2",
     "pg": "^7.4.1",
     "react": "^16.0.0",
+    "cross-env": "^5.1.4",
     "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "cypress": "^2.1.0"
   }
 }
